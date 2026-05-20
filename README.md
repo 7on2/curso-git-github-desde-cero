@@ -556,8 +556,6 @@ Veras la carpeta `.git` en la lista.
 
 ### Los Tres Estados De Git
 
-![Los 3 Estados de Git](imagenes/los-3-estados.png)
-
 Git trabaja con tres estados principales:
 
 | Estado | Significado |
@@ -565,8 +563,6 @@ Git trabaja con tres estados principales:
 | Modificado (Working Directory) | El archivo cambio en tu carpeta de trabajo |
 | Preparado (Staging Area) | El archivo esta listo para entrar al proximo commit |
 | Confirmado (Repository) | El cambio ya fue guardado en el historial |
-
-> **Diagrama editable**: Puedes abrir y modificar el diagrama en [Excalidraw](https://excalidraw.com/) subiendo el archivo [`estados-git.excalidraw`](./imagenes/estados-git.excalidraw).
 
 ```mermaid
 flowchart LR
