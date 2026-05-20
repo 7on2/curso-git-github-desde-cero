@@ -556,6 +556,8 @@ Veras la carpeta `.git` en la lista.
 
 ### Los Tres Estados De Git
 
+![Los 3 Estados de Git](./imagenes/los-3-estados.png)
+
 Git trabaja con tres estados principales:
 
 | Estado | Significado |
