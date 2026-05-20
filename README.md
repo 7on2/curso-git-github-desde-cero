@@ -7,65 +7,20 @@
 
 Aprende Git y GitHub desde fundamentos hasta flujos colaborativos reales, con explicaciones simples, comandos practicos y laboratorios para practicar desde casa.
 
-## Tabla De Contenidos
+## Ruta De Aprendizaje
 
-- [Fundamentos Del Control De Versiones](#fundamentos-del-control-de-versiones)
-  - [Que Problema Resuelve](#que-problema-resuelve)
-  - [Ideas Clave](#ideas-clave)
-  - [Conceptos Importantes](#conceptos-importantes)
-  - [Evolucion De Los Sistemas De Versiones](#evolucion-de-los-sistemas-de-versiones)
-  - [Por Que Git](#por-que-git)
-- [Git, GitHub Y Ramas](#git-github-y-ramas)
-  - [Que Es Git](#que-es-git)
-  - [Que Es GitHub](#que-es-github)
-  - [Diferencia Entre Git Y GitHub](#diferencia-entre-git-y-github)
-  - [Relacion Entre Git Y GitHub](#relacion-entre-git-y-github)
-  - [Que Es Una Rama](#que-es-una-rama)
-  - [Main Vs Master](#main-vs-master)
-  - [Loki, Git Y La Linea Temporal Sagrada](#loki-git-y-la-linea-temporal-sagrada)
-- [Terminal Y Linux Basico](#terminal-y-linux-basico)
-  - [Por Que Usar La Terminal](#por-que-usar-la-terminal)
-  - [Comandos Basicos](#comandos-basicos)
-  - [Ejemplo De Uso](#ejemplo-de-uso)
-  - [Recursos Para Practicar](#recursos-para-practicar)
-- [Instalacion Y Configuracion De Git](#instalacion-y-configuracion-de-git)
-  - [Verificar Si Git Esta Instalado](#verificar-si-git-esta-instalado)
-  - [Instalar Git](#instalar-git)
-  - [Configurar Tu Identidad](#configurar-tu-identidad)
-  - [Configurar El Editor Por Defecto](#configurar-el-editor-por-defecto)
-  - [Ver La Configuracion Actual](#ver-la-configuracion-actual)
-- [Primer Repositorio Local](#primer-repositorio-local)
-  - [Que Es Un Repositorio Local](#que-es-un-repositorio-local)
-  - [Que Hace `git init`](#que-hace-git-init)
-  - [Verificar Que El Repositorio Se Creo](#verificar-que-el-repositorio-se-creo)
-  - [Directorio De Trabajo](#directorio-de-trabajo)
-  - [Crear Un Proyecto Desde Cero](#crear-un-proyecto-desde-cero)
-- [Estados, Staging Y Commits](#estados-staging-y-commits)
-  - [Los Tres Estados De Git](#los-tres-estados-de-git)
-  - [Revisar El Estado Del Proyecto](#revisar-el-estado-del-proyecto)
-  - [Preparar Cambios](#preparar-cambios)
-  - [Crear Un Commit](#crear-un-commit)
-  - [Ver El Historial](#ver-el-historial)
-  - [Commits Atomicos](#commits-atomicos)
-  - [Buenos Mensajes De Commit](#buenos-mensajes-de-commit)
-- [Deshacer Cambios En Git](#deshacer-cambios-en-git)
-  - [Deshacer Modificaciones En Un Archivo](#deshacer-modificaciones-en-un-archivo)
-  - [Quitar Un Archivo Del Staging](#quitar-un-archivo-del-staging)
-  - [Si Ya Hiciste Commit](#si-ya-hiciste-commit)
-  - [Resumen De Comandos](#resumen-de-comandos)
-- [Gitignore Y Buenas Practicas](#gitignore-y-buenas-practicas)
-  - [Que Es `.gitignore`](#que-es-gitignore)
-  - [Que Archivos Ignorar](#que-archivos-ignorar)
-  - [Ejemplos Comunes](#ejemplos-comunes)
-  - [Crear Un `.gitignore`](#crear-un-gitignore)
-  - [`.gitignore` Global](#gitignore-global)
-  - [Buenas Practicas](#buenas-practicas)
-- [Laboratorio: Primer Flujo Local Con Git](#laboratorio-primer-flujo-local-con-git)
-  - [Objetivo](#objetivo)
-  - [Requisitos](#requisitos)
-  - [Pasos](#pasos)
-  - [Resultado Esperado](#resultado-esperado)
-- [Material Complementario](#material-complementario)
+| Bloque | Tema | Ir |
+|---|---|---|
+| 01 | Fundamentos de control de versiones | [Abrir](#fundamentos-del-control-de-versiones) |
+| 02 | Git, GitHub y ramas | [Abrir](#git-github-y-ramas) |
+| 03 | Terminal y Linux basico | [Abrir](#terminal-y-linux-basico) |
+| 04 | Instalacion y configuracion | [Abrir](#instalacion-y-configuracion-de-git) |
+| 05 | Repositorio local y flujo de trabajo | [Abrir](#primer-repositorio-local) |
+| 06 | Estados, staging y commits | [Abrir](#estados-staging-y-commits) |
+| 07 | Deshacer cambios y `.gitignore` | [Deshacer](#deshacer-cambios-en-git) / [Gitignore](#gitignore-y-buenas-practicas) |
+| 08 | Laboratorio y recursos | [Laboratorio](#laboratorio-primer-flujo-local-con-git) / [Recursos](#material-complementario) |
+
+> Este indice se mantendra corto aunque el curso crezca. Cada bloque contiene explicaciones, comandos y diagramas dentro de su propia seccion.
 
 ---
 
