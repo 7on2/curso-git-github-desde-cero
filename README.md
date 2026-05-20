@@ -278,6 +278,8 @@ Ya sea que estes lidiando con Lineas Temporales Sagradas o ramas de Git, el obje
 
 Asi que la proxima vez que trabajes en un proyecto de Git, recuerda que no solo estas gestionando ramas de codigo; eres un **guardian cosmico**, salvaguardando la integridad de tu codigo. Y quien sabe, quizas algun dia la TVA comience a monitorear nuestros repositorios de Git, asegurandose de que no creemos Eventos Nexus que podrian destruir todo el universo del software.
 
+> **Creditos**: Esta analogia esta basada en el articulo *"Loki, Git, and the Cosmic Retcon"* de [Gaurav Trivedi](https://beingtechnicalwriter.com/sacred-timeline-git/). Publicado en [Being Technical Writer](https://beingtechnicalwriter.com/).
+
 ---
 
 ## Terminal Y Linux Basico
