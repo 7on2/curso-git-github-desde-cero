@@ -564,6 +564,31 @@ Git trabaja con tres estados principales:
 | Preparado (Staging Area) | El archivo esta listo para entrar al proximo commit |
 | Confirmado (Repository) | El cambio ya fue guardado en el historial |
 
+#### Diagrama De Los Tres Estados
+
+```mermaid
+flowchart LR
+    WD[📁 Working Directory\nDirectorio de Trabajo]
+    SA[📦 Staging Area\nArea de Preparacion]
+    LR2[💾 Local Repository\nRepositorio Local]
+
+    WD -->|git add| SA
+    SA -->|git commit| LR2
+    LR2 -->|git checkout| WD
+    SA -->|git restore --staged| WD
+    LR2 -->|git restore| WD
+
+    style WD fill:#ffcccc,stroke:#cc0000,stroke-width:2px
+    style SA fill:#ccffcc,stroke:#00cc00,stroke-width:2px
+    style LR2 fill:#ccccff,stroke:#0000cc,stroke-width:2px
+```
+
+**Como funciona el flujo**:
+
+1. **Working Directory** (rojo): Creas o modificas archivos aqui. Git detecta los cambios pero no los guarda aun.
+2. **Staging Area** (verde): Usas `git add` para preparar los cambios que quieres incluir en el proximo commit.
+3. **Local Repository** (azul): Usas `git commit` para guardar permanentemente los cambios preparados en el historial.
+
 **Analogia**:
 
 - **Working Directory**: tu taller donde trabajas en los archivos.
