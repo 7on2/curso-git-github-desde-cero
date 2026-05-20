@@ -566,6 +566,8 @@ Git trabaja con tres estados principales:
 
 #### Diagrama De Los Tres Estados
 
+> Puedes abrir el diagrama editable en [Excalidraw](https://excalidraw.com/) subiendo el archivo [`estados-git.excalidraw`](./imagenes/estados-git.excalidraw).
+
 ```mermaid
 flowchart LR
     WD[📁 Working Directory\nDirectorio de Trabajo]
