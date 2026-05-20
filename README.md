@@ -568,6 +568,23 @@ Git trabaja con tres estados principales:
 
 > **Diagrama editable**: Puedes abrir y modificar el diagrama en [Excalidraw](https://excalidraw.com/) subiendo el archivo [`estados-git.excalidraw`](./imagenes/estados-git.excalidraw).
 
+```mermaid
+flowchart LR
+    WD[📁 Working Directory\nDirectorio de Trabajo]
+    SA[📦 Staging Area\nArea de Preparacion]
+    LR2[💾 Local Repository\nRepositorio Local]
+
+    WD -->|git add| SA
+    SA -->|git commit| LR2
+    LR2 -->|git checkout| WD
+    SA -->|git restore --staged| WD
+    LR2 -->|git restore| WD
+
+    style WD fill:#ffcccc,stroke:#cc0000,stroke-width:2px
+    style SA fill:#ccffcc,stroke:#00cc00,stroke-width:2px
+    style LR2 fill:#ccccff,stroke:#0000cc,stroke-width:2px
+```
+
 **Como funciona el flujo**:
 
 1. **Working Directory** (rojo): Creas o modificas archivos aqui. Git detecta los cambios pero no los guarda aun.
