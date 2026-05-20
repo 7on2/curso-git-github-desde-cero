@@ -114,19 +114,19 @@ commit 2: agrega login
 commit 3: corrige validacion
 ```
 
-#### Diagrama: Historial Como Linea De Tiempo
+#### Historial Como Linea De Tiempo
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
-    A[Commit 1\nCrea estructura] --> B[Commit 2\nAgrega login]
-    B --> C[Commit 3\nCorrige validacion]
-    C --> D[Estado actual]
+    A[🧱 Commit 1\nCrea estructura] --> B[🔐 Commit 2\nAgrega login]
+    B --> C[🛠️ Commit 3\nCorrige validacion]
+    C --> D[✅ Estado actual]
 
-    style A fill:#1971c2,stroke:#1864ab,color:#fff
-    style B fill:#1971c2,stroke:#1864ab,color:#fff
-    style C fill:#1971c2,stroke:#1864ab,color:#fff
-    style D fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style A fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style B fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style C fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style D fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
 ```
 
 #### Recuperacion
@@ -195,19 +195,19 @@ GitHub es una plataforma en la nube que almacena repositorios de Git.
 
 **Analogia**: Git es como Microsoft Word instalado en tu PC. GitHub es como Google Docs, donde compartes y trabajas con otros.
 
-#### Diagrama: Git Local Vs GitHub Remoto
+#### Git Local Vs GitHub Remoto
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
-    Dev[Tu computadora\nGit instalado] -->|git commit| Local[(Repositorio local)]
-    Local -->|git push| GH[(GitHub\nRepositorio remoto)]
-    GH -->|git clone / git pull| Alumno[Otra computadora]
+    Dev[💻 Tu computadora\nGit instalado] -->|git commit| Local[(🗂️ Repositorio local)]
+    Local -->|git push| GH[(☁️ GitHub\nRepositorio remoto)]
+    GH -->|git clone / git pull| Alumno[👩‍💻 Otra computadora]
 
-    style Dev fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style Local fill:#1971c2,stroke:#1864ab,color:#fff
-    style GH fill:#343a40,stroke:#212529,color:#fff
-    style Alumno fill:#7048e8,stroke:#5f3dc4,color:#fff
+    style Dev fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style Local fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style GH fill:#30363d,stroke:#8b949e,stroke-width:2px,color:#ffffff
+    style Alumno fill:#8250df,stroke:#a371f7,stroke-width:2px,color:#ffffff
 ```
 
 ### Relacion Entre Git Y GitHub
@@ -235,10 +235,10 @@ main (rama principal)
   +-- feature/perfil (rama para perfil)
 ```
 
-#### Diagrama: Rama Principal Y Rama De Trabajo
+#### Rama Principal Y Rama De Trabajo
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'commitLabelColor': '#ffffff', 'commitLabelBackground': '#0969da', 'git0': '#58a6ff', 'git1': '#a371f7', 'fontFamily': 'Arial'}}}%%
 gitGraph
     commit id: "Inicio"
     commit id: "README"
@@ -350,21 +350,21 @@ En el flujo DevOps:
 
 Saber moverte en la terminal es fundamental para todos estos cursos.
 
-#### Diagrama: Git Dentro Del Flujo DevOps
+#### Git Dentro Del Flujo DevOps
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
-    Linux[Linux\nTerminal] --> Git[Git\nVersionado]
-    Git --> GitHub[GitHub\nColaboracion]
-    GitHub --> Docker[Docker\nContenedores]
-    Docker --> Ansible[Ansible\nAutomatizacion]
+    Linux[🐧 Linux\nTerminal] --> Git[🌳 Git\nVersionado]
+    Git --> GitHub[🐙 GitHub\nColaboracion]
+    GitHub --> Docker[🐳 Docker\nContenedores]
+    Docker --> Ansible[⚙️ Ansible\nAutomatizacion]
 
-    style Linux fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style Git fill:#f76707,stroke:#e8590c,color:#fff
-    style GitHub fill:#343a40,stroke:#212529,color:#fff
-    style Docker fill:#1971c2,stroke:#1864ab,color:#fff
-    style Ansible fill:#e03131,stroke:#c92a2a,color:#fff
+    style Linux fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style Git fill:#bc4c00,stroke:#ffa657,stroke-width:2px,color:#ffffff
+    style GitHub fill:#30363d,stroke:#8b949e,stroke-width:2px,color:#ffffff
+    style Docker fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style Ansible fill:#cf222e,stroke:#ff7b72,stroke-width:2px,color:#ffffff
 ```
 
 ### Comandos Basicos
@@ -589,21 +589,21 @@ mi-proyecto/
 └── script.py      (tu archivo)
 ```
 
-#### Diagrama: Carpeta Visible Vs Cerebro De Git
+#### Carpeta Visible Vs Cerebro De Git
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart TB
-    Repo[mi-proyecto/] --> Visible[Archivos visibles\nREADME.md / script.py]
-    Repo --> GitFolder[.git/\nHistorial y configuracion]
-    Visible -->|editas aqui| Cambios[Git detecta cambios]
-    GitFolder -->|guarda commits| Historial[Linea de tiempo]
+    Repo[📁 mi-proyecto/] --> Visible[📝 Archivos visibles\nREADME.md / script.py]
+    Repo --> GitFolder[🧠 .git/\nHistorial y configuracion]
+    Visible -->|editas aqui| Cambios[🔍 Git detecta cambios]
+    GitFolder -->|guarda commits| Historial[🕒 Linea de tiempo]
 
-    style Repo fill:#343a40,stroke:#212529,color:#fff
-    style Visible fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style GitFolder fill:#1971c2,stroke:#1864ab,color:#fff
-    style Cambios fill:#f76707,stroke:#e8590c,color:#fff
-    style Historial fill:#7048e8,stroke:#5f3dc4,color:#fff
+    style Repo fill:#30363d,stroke:#8b949e,stroke-width:2px,color:#ffffff
+    style Visible fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style GitFolder fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style Cambios fill:#bc4c00,stroke:#ffa657,stroke-width:2px,color:#ffffff
+    style Historial fill:#8250df,stroke:#a371f7,stroke-width:2px,color:#ffffff
 ```
 
 ### Crear Un Proyecto Desde Cero
@@ -645,7 +645,7 @@ Git trabaja con tres estados principales:
 | Confirmado (Repository) | El cambio ya fue guardado en el historial |
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'primaryColor': '#1a1a2e', 'lineColor': '#e0e0e0', 'secondaryTextColor': '#fff', 'tertiaryTextColor': '#fff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
     WD[📁 Working Directory\nDirectorio de Trabajo]
     SA[📦 Staging Area\nArea de Preparacion]
@@ -657,9 +657,9 @@ flowchart LR
     SA -->|git restore --staged| WD
     LR2 -->|git restore| WD
 
-    style WD fill:#e03131,stroke:#c92a2a,stroke-width:2px,color:#fff
-    style SA fill:#2f9e44,stroke:#2b8a3e,stroke-width:2px,color:#fff
-    style LR2 fill:#1971c2,stroke:#1864ab,stroke-width:2px,color:#fff
+    style WD fill:#cf222e,stroke:#ff7b72,stroke-width:2px,color:#ffffff
+    style SA fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style LR2 fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
 ```
 
 **Como funciona el flujo**:
@@ -729,21 +729,21 @@ Un commit es una foto del proyecto en un momento dado.
 - Incluye autor, fecha y mensaje.
 - Genera un identificador unico (hash SHA-1).
 
-#### Diagrama: Commits Y HEAD
+#### Commits Y HEAD
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
-    A[Commit A\nInicio] --> B[Commit B\nREADME]
-    B --> C[Commit C\nLogin]
-    C --> D[Commit D\nCorreccion]
-    HEAD[HEAD\nposicion actual] --> D
+    A[🧱 Commit A\nInicio] --> B[📄 Commit B\nREADME]
+    B --> C[🔐 Commit C\nLogin]
+    C --> D[✅ Commit D\nCorreccion]
+    HEAD[📍 HEAD\nposicion actual] --> D
 
-    style A fill:#1971c2,stroke:#1864ab,color:#fff
-    style B fill:#1971c2,stroke:#1864ab,color:#fff
-    style C fill:#1971c2,stroke:#1864ab,color:#fff
-    style D fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style HEAD fill:#e03131,stroke:#c92a2a,color:#fff
+    style A fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style B fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style C fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style D fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style HEAD fill:#cf222e,stroke:#ff7b72,stroke-width:2px,color:#ffffff
 ```
 
 ### Ver El Historial
@@ -835,27 +835,27 @@ git status
 
 Si el cambio ya fue confirmado con `git commit`, puedes:
 
-#### Diagrama: Como Elegir La Forma De Deshacer
+#### Como Elegir La Forma De Deshacer
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart TD
-    A[Quiero deshacer algo] --> B{Ya hice commit?}
-    B -->|No| C{Esta en staging?}
-    C -->|No| D[git restore archivo.txt]
-    C -->|Si| E[git restore --staged archivo.txt]
-    E --> F[Los cambios vuelven al working directory]
-    B -->|Si| G[git revert hash]
-    G --> H[Se crea un nuevo commit correctivo]
+    A[🤔 Quiero deshacer algo] --> B{📌 Ya hice commit?}
+    B -->|No| C{📦 Esta en staging?}
+    C -->|No| D[🗑️ git restore archivo.txt]
+    C -->|Si| E[↩️ git restore --staged archivo.txt]
+    E --> F[📁 Cambios vuelven al working directory]
+    B -->|Si| G[🧯 git revert hash]
+    G --> H[✅ Nuevo commit correctivo]
 
-    style A fill:#343a40,stroke:#212529,color:#fff
-    style B fill:#7048e8,stroke:#5f3dc4,color:#fff
-    style C fill:#7048e8,stroke:#5f3dc4,color:#fff
-    style D fill:#e03131,stroke:#c92a2a,color:#fff
-    style E fill:#f76707,stroke:#e8590c,color:#fff
-    style F fill:#1971c2,stroke:#1864ab,color:#fff
-    style G fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style H fill:#1971c2,stroke:#1864ab,color:#fff
+    style A fill:#30363d,stroke:#8b949e,stroke-width:2px,color:#ffffff
+    style B fill:#8250df,stroke:#a371f7,stroke-width:2px,color:#ffffff
+    style C fill:#8250df,stroke:#a371f7,stroke-width:2px,color:#ffffff
+    style D fill:#cf222e,stroke:#ff7b72,stroke-width:2px,color:#ffffff
+    style E fill:#bc4c00,stroke:#ffa657,stroke-width:2px,color:#ffffff
+    style F fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
+    style G fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style H fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
 ```
 
 #### Ver El Historial
@@ -895,21 +895,21 @@ Los archivos ignorados:
 - No se pueden preparar con `git add`.
 - No se suben al repositorio.
 
-#### Diagrama: `.gitignore` Como Filtro
+#### `.gitignore` Como Filtro
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff', 'tertiaryTextColor': '#ffffff', 'lineColor': '#d0d7de', 'edgeLabelBackground': '#0d1117', 'fontFamily': 'Arial'}}}%%
 flowchart LR
-    Archivos[Archivos del proyecto] --> Filtro{.gitignore}
-    Filtro -->|permitido| GitAdd[git add]
-    Filtro -->|ignorado| Fuera[No entra al repositorio]
-    GitAdd --> Commit[git commit]
+    Archivos[📁 Archivos del proyecto] --> Filtro{🚧 .gitignore}
+    Filtro -->|permitido| GitAdd[📦 git add]
+    Filtro -->|ignorado| Fuera[🙈 No entra al repositorio]
+    GitAdd --> Commit[💾 git commit]
 
-    style Archivos fill:#343a40,stroke:#212529,color:#fff
-    style Filtro fill:#f76707,stroke:#e8590c,color:#fff
-    style GitAdd fill:#2f9e44,stroke:#2b8a3e,color:#fff
-    style Fuera fill:#e03131,stroke:#c92a2a,color:#fff
-    style Commit fill:#1971c2,stroke:#1864ab,color:#fff
+    style Archivos fill:#30363d,stroke:#8b949e,stroke-width:2px,color:#ffffff
+    style Filtro fill:#bc4c00,stroke:#ffa657,stroke-width:2px,color:#ffffff
+    style GitAdd fill:#238636,stroke:#56d364,stroke-width:2px,color:#ffffff
+    style Fuera fill:#cf222e,stroke:#ff7b72,stroke-width:2px,color:#ffffff
+    style Commit fill:#0969da,stroke:#58a6ff,stroke-width:2px,color:#ffffff
 ```
 
 ### Que Archivos Ignorar
