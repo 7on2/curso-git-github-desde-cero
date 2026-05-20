@@ -114,6 +114,21 @@ commit 2: agrega login
 commit 3: corrige validacion
 ```
 
+#### Diagrama: Historial Como Linea De Tiempo
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart LR
+    A[Commit 1\nCrea estructura] --> B[Commit 2\nAgrega login]
+    B --> C[Commit 3\nCorrige validacion]
+    C --> D[Estado actual]
+
+    style A fill:#1971c2,stroke:#1864ab,color:#fff
+    style B fill:#1971c2,stroke:#1864ab,color:#fff
+    style C fill:#1971c2,stroke:#1864ab,color:#fff
+    style D fill:#2f9e44,stroke:#2b8a3e,color:#fff
+```
+
 #### Recuperacion
 
 Si algo sale mal, puedes volver a un punto anterior sin perder el trabajo actual.
@@ -180,6 +195,21 @@ GitHub es una plataforma en la nube que almacena repositorios de Git.
 
 **Analogia**: Git es como Microsoft Word instalado en tu PC. GitHub es como Google Docs, donde compartes y trabajas con otros.
 
+#### Diagrama: Git Local Vs GitHub Remoto
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart LR
+    Dev[Tu computadora\nGit instalado] -->|git commit| Local[(Repositorio local)]
+    Local -->|git push| GH[(GitHub\nRepositorio remoto)]
+    GH -->|git clone / git pull| Alumno[Otra computadora]
+
+    style Dev fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style Local fill:#1971c2,stroke:#1864ab,color:#fff
+    style GH fill:#343a40,stroke:#212529,color:#fff
+    style Alumno fill:#7048e8,stroke:#5f3dc4,color:#fff
+```
+
 ### Relacion Entre Git Y GitHub
 
 El flujo basico es:
@@ -203,6 +233,22 @@ main (rama principal)
   +-- feature/login (rama para login)
   |
   +-- feature/perfil (rama para perfil)
+```
+
+#### Diagrama: Rama Principal Y Rama De Trabajo
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+gitGraph
+    commit id: "Inicio"
+    commit id: "README"
+    branch feature-login
+    checkout feature-login
+    commit id: "Login"
+    commit id: "Validacion"
+    checkout main
+    commit id: "Docs"
+    merge feature-login id: "Merge login"
 ```
 
 ### Main Vs Master
@@ -303,6 +349,23 @@ En el flujo DevOps:
 - Ansible automatiza configuraciones.
 
 Saber moverte en la terminal es fundamental para todos estos cursos.
+
+#### Diagrama: Git Dentro Del Flujo DevOps
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart LR
+    Linux[Linux\nTerminal] --> Git[Git\nVersionado]
+    Git --> GitHub[GitHub\nColaboracion]
+    GitHub --> Docker[Docker\nContenedores]
+    Docker --> Ansible[Ansible\nAutomatizacion]
+
+    style Linux fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style Git fill:#f76707,stroke:#e8590c,color:#fff
+    style GitHub fill:#343a40,stroke:#212529,color:#fff
+    style Docker fill:#1971c2,stroke:#1864ab,color:#fff
+    style Ansible fill:#e03131,stroke:#c92a2a,color:#fff
+```
 
 ### Comandos Basicos
 
@@ -526,6 +589,23 @@ mi-proyecto/
 └── script.py      (tu archivo)
 ```
 
+#### Diagrama: Carpeta Visible Vs Cerebro De Git
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart TB
+    Repo[mi-proyecto/] --> Visible[Archivos visibles\nREADME.md / script.py]
+    Repo --> GitFolder[.git/\nHistorial y configuracion]
+    Visible -->|editas aqui| Cambios[Git detecta cambios]
+    GitFolder -->|guarda commits| Historial[Linea de tiempo]
+
+    style Repo fill:#343a40,stroke:#212529,color:#fff
+    style Visible fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style GitFolder fill:#1971c2,stroke:#1864ab,color:#fff
+    style Cambios fill:#f76707,stroke:#e8590c,color:#fff
+    style Historial fill:#7048e8,stroke:#5f3dc4,color:#fff
+```
+
 ### Crear Un Proyecto Desde Cero
 
 ```bash
@@ -649,6 +729,23 @@ Un commit es una foto del proyecto en un momento dado.
 - Incluye autor, fecha y mensaje.
 - Genera un identificador unico (hash SHA-1).
 
+#### Diagrama: Commits Y HEAD
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart LR
+    A[Commit A\nInicio] --> B[Commit B\nREADME]
+    B --> C[Commit C\nLogin]
+    C --> D[Commit D\nCorreccion]
+    HEAD[HEAD\nposicion actual] --> D
+
+    style A fill:#1971c2,stroke:#1864ab,color:#fff
+    style B fill:#1971c2,stroke:#1864ab,color:#fff
+    style C fill:#1971c2,stroke:#1864ab,color:#fff
+    style D fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style HEAD fill:#e03131,stroke:#c92a2a,color:#fff
+```
+
 ### Ver El Historial
 
 ```bash
@@ -738,6 +835,29 @@ git status
 
 Si el cambio ya fue confirmado con `git commit`, puedes:
 
+#### Diagrama: Como Elegir La Forma De Deshacer
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart TD
+    A[Quiero deshacer algo] --> B{Ya hice commit?}
+    B -->|No| C{Esta en staging?}
+    C -->|No| D[git restore archivo.txt]
+    C -->|Si| E[git restore --staged archivo.txt]
+    E --> F[Los cambios vuelven al working directory]
+    B -->|Si| G[git revert hash]
+    G --> H[Se crea un nuevo commit correctivo]
+
+    style A fill:#343a40,stroke:#212529,color:#fff
+    style B fill:#7048e8,stroke:#5f3dc4,color:#fff
+    style C fill:#7048e8,stroke:#5f3dc4,color:#fff
+    style D fill:#e03131,stroke:#c92a2a,color:#fff
+    style E fill:#f76707,stroke:#e8590c,color:#fff
+    style F fill:#1971c2,stroke:#1864ab,color:#fff
+    style G fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style H fill:#1971c2,stroke:#1864ab,color:#fff
+```
+
 #### Ver El Historial
 
 ```bash
@@ -774,6 +894,23 @@ Los archivos ignorados:
 - No aparecen en `git status`.
 - No se pueden preparar con `git add`.
 - No se suben al repositorio.
+
+#### Diagrama: `.gitignore` Como Filtro
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#fff', 'lineColor': '#e0e0e0'}}}%%
+flowchart LR
+    Archivos[Archivos del proyecto] --> Filtro{.gitignore}
+    Filtro -->|permitido| GitAdd[git add]
+    Filtro -->|ignorado| Fuera[No entra al repositorio]
+    GitAdd --> Commit[git commit]
+
+    style Archivos fill:#343a40,stroke:#212529,color:#fff
+    style Filtro fill:#f76707,stroke:#e8590c,color:#fff
+    style GitAdd fill:#2f9e44,stroke:#2b8a3e,color:#fff
+    style Fuera fill:#e03131,stroke:#c92a2a,color:#fff
+    style Commit fill:#1971c2,stroke:#1864ab,color:#fff
+```
 
 ### Que Archivos Ignorar
 
