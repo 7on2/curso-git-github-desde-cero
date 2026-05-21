@@ -206,6 +206,688 @@ gitGraph
     merge feature-login id: "Merge login"
 ```
 
+### Ramas En Git: Trabajo Paralelo, Merge Y Conflictos
+
+Hasta ahora, el flujo mas basico de Git es lineal:
+
+```text
+modificar -> preparar -> confirmar
+```
+
+Eso ya es util porque permite guardar versiones del proyecto. Pero en proyectos reales casi nunca trabajamos solo en una linea recta. Una persona puede estar agregando un menu, otra corrigiendo estilos y otra probando un nuevo encabezado.
+
+Una **rama** permite crear una version paralela del repositorio a partir de un commit. Desde ahi puedes avanzar sin tocar directamente la rama principal.
+
+#### Idea Central
+
+Una rama no es una copia completa del proyecto. En Git, una rama es un **puntero ligero** que apunta a un commit.
+
+```mermaid
+gitGraph
+    commit id: "A"
+    branch feature-menu
+    checkout feature-menu
+    commit id: "B"
+    checkout main
+```
+
+En este ejemplo:
+
+- `A` es el commit base.
+- `main` sigue apuntando a `A`.
+- `feature-menu` avanzo hacia `B`.
+- El trabajo nuevo quedo aislado.
+
+#### La Analogia De La Autopista
+
+El nombre "rama" puede confundir porque pensamos en un arbol. En un arbol real, una rama nace del tronco y normalmente no vuelve a unirse.
+
+En Git es diferente: una rama puede separarse y luego volver a integrarse. Por eso se parece mas a una salida de autopista: sales por una via paralela, avanzas y mas adelante puedes volver a la via principal.
+
+```mermaid
+flowchart LR
+    A[Commit base] --> B[main estable]
+    A --> C[rama feature]
+    C --> D[commits de trabajo]
+    D --> E[merge]
+    B --> E
+    E --> F[main actualizado]
+
+    style A fill:#0969da,stroke:#58a6ff,color:#ffffff
+    style B fill:#0969da,stroke:#58a6ff,color:#ffffff
+    style C fill:#8250df,stroke:#a371f7,color:#ffffff
+    style D fill:#8250df,stroke:#a371f7,color:#ffffff
+    style E fill:#238636,stroke:#56d364,color:#ffffff
+    style F fill:#238636,stroke:#56d364,color:#ffffff
+```
+
+#### Para Que Sirven Las Ramas
+
+Las ramas permiten:
+
+- Trabajar en paralelo.
+- Probar ideas sin romper `main`.
+- Separar funcionalidades.
+- Corregir errores urgentes.
+- Revisar cambios antes de integrarlos.
+- Mantener limpia la version estable del proyecto.
+
+La rama principal, normalmente `main`, representa la version estable del proyecto. Las ramas como `feature-menu`, `feature-estilos` o `fix-header` suelen ser temporales.
+
+#### Comandos Esenciales De Ramas
+
+Ver las ramas locales:
+
+```bash
+git branch
+```
+
+Git marca con `*` la rama actual:
+
+```text
+* main
+  feature-menu
+  feature-estilos
+```
+
+Mostrar solo el nombre de la rama actual:
+
+```bash
+git branch --show-current
+```
+
+Crear una rama sin cambiarte a ella:
+
+```bash
+git branch fix
+```
+
+Cambiarte a una rama existente:
+
+```bash
+git switch fix
+```
+
+Crear una rama y entrar a ella en un solo paso:
+
+```bash
+git switch -c mi-primera-rama
+```
+
+Volver a `main`:
+
+```bash
+git switch main
+```
+
+Ver el historial con ramas:
+
+```bash
+git log --oneline --graph --all
+```
+
+> Importante: para crear una rama debe existir al menos un commit. Si ejecutas `git init` y aun no has creado ningun commit, Git no tiene un punto base desde donde crear la rama.
+
+#### Flujo Mental Antes De Cambiar De Rama
+
+Antes de moverte entre ramas, revisa el estado:
+
+```bash
+git status
+```
+
+Si tienes cambios sin guardar, Git puede bloquear el cambio de rama para proteger tu trabajo.
+
+```mermaid
+flowchart TD
+    A[Quiero cambiar de rama] --> B[git status]
+    B --> C{Hay cambios pendientes?}
+    C -->|No| D[git switch otra-rama]
+    C -->|Si| E{Quiero guardarlos?}
+    E -->|Si| F[git add . + git commit]
+    E -->|No todavia| G[git stash]
+    F --> D
+    G --> D
+
+    style A fill:#30363d,stroke:#8b949e,color:#ffffff
+    style B fill:#0969da,stroke:#58a6ff,color:#ffffff
+    style C fill:#8250df,stroke:#a371f7,color:#ffffff
+    style D fill:#238636,stroke:#56d364,color:#ffffff
+    style E fill:#8250df,stroke:#a371f7,color:#ffffff
+    style F fill:#bc4c00,stroke:#ffa657,color:#ffffff
+    style G fill:#bc4c00,stroke:#ffa657,color:#ffffff
+```
+
+### Escenario Realista: Web De Cafe Aroma
+
+Imagina que tu y otra persona desarrollan la web de **Cafe Aroma**.
+
+La rama `main` representa:
+
+- la version estable,
+- el tronco principal del proyecto,
+- el estado que no deberia romperse.
+
+Cada nueva funcionalidad se desarrolla en una rama separada.
+
+#### 1. Crear El Proyecto
+
+```bash
+mkdir cafe-aroma
+cd cafe-aroma
+```
+
+#### 2. Inicializar Git Con Rama Main
+
+```bash
+git init -b main
+```
+
+Git crea:
+
+- un repositorio,
+- un historial vacio,
+- una rama principal llamada `main`,
+- una carpeta oculta `.git`.
+
+La carpeta `.git` guarda commits, ramas, historial y referencias internas.
+
+#### 3. Crear Archivos Iniciales
+
+```bash
+touch index.html estilos.css menu.txt
+```
+
+Contenido inicial:
+
+```html
+<!-- index.html -->
+<h1>Cafe Aroma</h1>
+```
+
+```text
+# menu.txt
+- Cafe americano
+- Te
+```
+
+#### 4. Revisar El Estado
+
+```bash
+git status
+```
+
+Git mostrara archivos sin rastrear:
+
+```text
+Untracked files:
+  index.html
+  estilos.css
+  menu.txt
+```
+
+Git piensa en estados:
+
+```text
+Working Directory -> Staging Area -> Repository
+modificado        -> preparado    -> confirmado
+```
+
+```mermaid
+flowchart LR
+    WD[Working Directory\narchivos creados o modificados]
+    SA[Staging Area\ncambios preparados]
+    RP[Repository\ncommits confirmados]
+
+    WD -->|git add| SA
+    SA -->|git commit| RP
+
+    style WD fill:#cf222e,stroke:#ff7b72,color:#ffffff
+    style SA fill:#bc4c00,stroke:#ffa657,color:#ffffff
+    style RP fill:#238636,stroke:#56d364,color:#ffffff
+```
+
+#### 5. Pasar Archivos Al Staging
+
+```bash
+git add .
+```
+
+Esto significa: "estos cambios si quiero guardarlos en el proximo commit".
+
+#### 6. Crear El Primer Commit
+
+```bash
+git commit -m "Proyecto inicial de cafeteria"
+```
+
+Un commit no es una carpeta. Es:
+
+- una fotografia del proyecto,
+- un punto en el historial,
+- una version exacta del estado confirmado.
+
+```mermaid
+gitGraph
+    commit id: "A: proyecto inicial"
+```
+
+#### 7. Crear Una Rama Para El Menu
+
+```bash
+git switch -c feature-menu
+```
+
+Git no copio todo el proyecto. Solo creo un nuevo puntero apuntando al mismo commit.
+
+```mermaid
+gitGraph
+    commit id: "A"
+    branch feature-menu
+    checkout feature-menu
+```
+
+En este punto, `main` y `feature-menu` apuntan al mismo commit.
+
+#### 8. Modificar El Menu
+
+Edita `menu.txt`:
+
+```text
+- Cafe americano
+- Te
+- Capuccino
+- Cheesecake
+```
+
+Guarda el cambio:
+
+```bash
+git add menu.txt
+git commit -m "Agregar nuevos productos"
+```
+
+Historial:
+
+```mermaid
+gitGraph
+    commit id: "A"
+    branch feature-menu
+    checkout feature-menu
+    commit id: "B: menu"
+    checkout main
+```
+
+Idea clave:
+
+- `feature-menu` avanzo.
+- `main` no cambio.
+- La funcionalidad evoluciono aislada.
+
+#### 9. Volver A Main
+
+```bash
+git switch main
+```
+
+Si al volver a `main` no ves el cheesecake, no se borro nada. Estas viendo la fotografia del commit `A`. Git permite viajar entre versiones del proyecto.
+
+#### 10. Crear Una Rama De Estilos
+
+```bash
+git switch -c feature-estilos
+```
+
+Edita `estilos.css`:
+
+```css
+body {
+  background-color: beige;
+}
+```
+
+Confirma el cambio:
+
+```bash
+git add estilos.css
+git commit -m "Agregar estilos iniciales"
+```
+
+Ahora hay dos lineas de evolucion:
+
+```mermaid
+gitGraph
+    commit id: "A"
+    branch feature-menu
+    checkout feature-menu
+    commit id: "B: menu"
+    checkout main
+    branch feature-estilos
+    checkout feature-estilos
+    commit id: "C: estilos"
+    checkout main
+```
+
+`feature-menu` y `feature-estilos` nacieron desde el mismo punto, pero guardan cambios diferentes.
+
+### Fusionar Ramas Con Git Merge
+
+Fusionar significa traer a la rama actual los cambios que viven en otra rama.
+
+Regla importante:
+
+> `git merge` afecta a la rama donde estas parado.
+
+Por eso primero vuelves a `main`:
+
+```bash
+git switch main
+```
+
+Fusionar estilos:
+
+```bash
+git merge feature-estilos
+```
+
+Fusionar menu:
+
+```bash
+git merge feature-menu
+```
+
+No hubo conflicto porque:
+
+- `feature-menu` modifico `menu.txt`,
+- `feature-estilos` modifico `estilos.css`,
+- Git puede combinar cambios en archivos distintos automaticamente.
+
+```mermaid
+gitGraph
+    commit id: "A"
+    branch feature-menu
+    checkout feature-menu
+    commit id: "B: menu"
+    checkout main
+    branch feature-estilos
+    checkout feature-estilos
+    commit id: "C: estilos"
+    checkout main
+    merge feature-estilos id: "D: merge estilos"
+    merge feature-menu id: "E: merge menu"
+```
+
+Comandos utiles durante el merge:
+
+```bash
+git status
+git log --oneline --graph --all
+```
+
+### Conflictos De Fusion
+
+Un conflicto ocurre cuando dos ramas modifican la misma zona de un archivo de formas incompatibles.
+
+Git no falla. Git se detiene para pedir una decision humana.
+
+#### 11. Crear Una Rama Para Modificar El Encabezado
+
+```bash
+git switch -c feature-header
+```
+
+Edita `index.html`:
+
+```html
+<h1>Bienvenidos a Cafe Aroma</h1>
+```
+
+Confirma:
+
+```bash
+git add index.html
+git commit -m "Cambiar encabezado"
+```
+
+#### 12. Mientras Tanto, Main Cambia La Misma Linea
+
+Vuelve a `main`:
+
+```bash
+git switch main
+```
+
+Edita la misma linea de `index.html`:
+
+```html
+<h1>Cafe Aroma - El mejor cafe de Lima</h1>
+```
+
+Confirma:
+
+```bash
+git add index.html
+git commit -m "Agregar slogan principal"
+```
+
+Ahora dos ramas modificaron:
+
+- el mismo archivo,
+- la misma linea,
+- de maneras distintas.
+
+#### 13. Intentar Fusionar
+
+```bash
+git merge feature-header
+```
+
+Git mostrara algo parecido a:
+
+```text
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+```mermaid
+flowchart TD
+    A[main cambia h1] --> C{git merge feature-header}
+    B[feature-header cambia h1] --> C
+    C --> D[Git detecta conflicto]
+    D --> E[Persona decide contenido final]
+    E --> F[git add index.html]
+    F --> G[git commit]
+
+    style A fill:#0969da,stroke:#58a6ff,color:#ffffff
+    style B fill:#8250df,stroke:#a371f7,color:#ffffff
+    style C fill:#bc4c00,stroke:#ffa657,color:#ffffff
+    style D fill:#cf222e,stroke:#ff7b72,color:#ffffff
+    style E fill:#238636,stroke:#56d364,color:#ffffff
+    style F fill:#238636,stroke:#56d364,color:#ffffff
+    style G fill:#238636,stroke:#56d364,color:#ffffff
+```
+
+#### 14. Leer Las Marcas De Conflicto
+
+Git deja marcas en el archivo:
+
+```html
+ <<<<<<< HEAD
+<h1>Cafe Aroma - El mejor cafe de Lima</h1>
+ =======
+<h1>Bienvenidos a Cafe Aroma</h1>
+ >>>>>>> feature-header
+```
+
+Como leerlo:
+
+- `HEAD`: lo que existe en la rama actual (`main`).
+- `=======`: separa las dos versiones.
+- `feature-header`: lo que viene desde la rama que intentas fusionar.
+
+Git esta diciendo: "no se cual decision es correcta; tu decides".
+
+#### 15. Resolver El Conflicto
+
+Decidimos combinar ambas ideas:
+
+```html
+<h1>Bienvenidos a Cafe Aroma - El mejor cafe de Lima</h1>
+```
+
+Luego eliminamos las marcas:
+
+```text
+ <<<<<<<
+ =======
+ >>>>>>>
+```
+
+#### 16. Marcar Como Resuelto
+
+```bash
+git add index.html
+```
+
+En un conflicto, `git add` significa: "Git, ya resolvi este archivo".
+
+#### 17. Finalizar El Merge
+
+```bash
+git commit -m "Resolver conflicto del encabezado"
+```
+
+Verifica el historial:
+
+```bash
+git log --oneline --graph --all
+```
+
+### Eliminar Ramas Que Ya Fueron Fusionadas
+
+Despues de fusionar una rama, normalmente ya no se necesita.
+
+Eliminar ramas ayuda a:
+
+- reducir ruido visual,
+- mantener el repositorio ordenado,
+- distinguir trabajo activo de trabajo terminado.
+
+Eliminar una rama fusionada:
+
+```bash
+git branch -d feature-menu
+```
+
+Eliminar otra:
+
+```bash
+git branch -d feature-estilos
+```
+
+Eliminar la rama del conflicto:
+
+```bash
+git branch -d feature-header
+```
+
+La opcion `-d` es segura: Git verifica si la rama ya fue fusionada.
+
+Si no fue fusionada, Git puede mostrar:
+
+```text
+The branch is not fully merged.
+```
+
+Eso significa que podrias perder commits.
+
+Forzar eliminacion:
+
+```bash
+git branch -D nombre-rama
+```
+
+La `D` mayuscula significa: "eliminala aunque pueda perder cambios".
+
+Usala solo si tienes claro que esos commits ya no importan.
+
+Ver ramas existentes:
+
+```bash
+git branch
+```
+
+Repositorio limpio:
+
+```text
+* main
+```
+
+### Comandos De Ramas: Resumen Completo
+
+| Accion | Comando |
+|---|---|
+| Ver ramas locales | `git branch` |
+| Ver la rama actual | `git branch --show-current` |
+| Crear una rama | `git branch nombre-rama` |
+| Cambiar de rama | `git switch nombre-rama` |
+| Crear y entrar a una rama | `git switch -c nombre-rama` |
+| Volver a main | `git switch main` |
+| Fusionar una rama en la rama actual | `git merge nombre-rama` |
+| Ver historial con ramas | `git log --oneline --graph --all` |
+| Eliminar rama fusionada | `git branch -d nombre-rama` |
+| Forzar eliminacion de rama | `git branch -D nombre-rama` |
+| Revisar estado del repo | `git status` |
+
+### Laboratorio Rapido: Cafe Aroma
+
+Ejecuta este flujo completo para practicar ramas sin conflicto:
+
+```bash
+mkdir cafe-aroma
+cd cafe-aroma
+git init -b main
+
+echo "<h1>Cafe Aroma</h1>" > index.html
+echo "- Cafe americano" > menu.txt
+touch estilos.css
+
+git add .
+git commit -m "Proyecto inicial de cafeteria"
+
+git switch -c feature-menu
+echo "- Cheesecake" >> menu.txt
+git add menu.txt
+git commit -m "Agregar producto al menu"
+
+git switch main
+git switch -c feature-estilos
+echo "body { background-color: beige; }" > estilos.css
+git add estilos.css
+git commit -m "Agregar estilos iniciales"
+
+git switch main
+git merge feature-estilos
+git merge feature-menu
+
+git branch -d feature-estilos
+git branch -d feature-menu
+
+git log --oneline --graph --all
+git status
+```
+
+### Ideas Que Deben Quedar Claras
+
+- Una rama nace desde un commit.
+- Crear una rama no duplica todo el proyecto.
+- `main` debe representar una version estable.
+- Una rama permite trabajar en paralelo.
+- `git merge` trae cambios de otra rama hacia la rama actual.
+- Un conflicto no es un error: es una decision que Git no puede tomar por ti.
+- `git add` despues de resolver un conflicto significa "ya lo resolvi".
+- Las ramas temporales deben eliminarse despues de fusionarse.
+
 ### Main Vs Master
 
 Historicamente, la rama principal se llamaba `master`. Desde 2020, la industria adopto `main` como nombre por defecto.
