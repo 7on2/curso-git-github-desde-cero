@@ -9,14 +9,14 @@ Aprende Git y GitHub desde fundamentos hasta flujos colaborativos reales, con ex
 
 Este README esta pensado como una guia de estudio. No es solo un indice de archivos: la idea es que puedas leerlo de corrido, repasar comandos y volver a los diagramas cuando algo no quede claro.
 
-## Material De La Clase
+## Material Del Repositorio
 
 | Material | Descripcion |
 |---|---|
-| [Programa completo fusionado](./material/programa-completo-git-y-github-9na-edicion.pdf) | PPT actualizado con las sesiones 1, 2 y 3 unificadas. Llega hasta historial, reset y `git revert`. |
+| [Guia visual completa](./material/programa-completo-git-y-github-9na-edicion.pdf) | Presentacion de apoyo con fundamentos, flujo local, ramas, merge, conflictos, historial, reset y `git revert`. |
 | [Material base anterior](./material/fundamentos-instalacion-trabajo-local.pdf) | PDF inicial de fundamentos, instalacion y trabajo local. |
 
-Por ahora el bloque principal del curso queda hasta `git revert`. Lo que sigue, como `rebase`, `stash`, `cherry-pick`, `reflog` y hooks, se vera con calma en la sesion 4.
+El contenido principal de esta guia llega hasta `git revert`. Los temas como `rebase`, `stash`, `cherry-pick`, `reflog` y hooks quedan propuestos como ampliacion para quien quiera seguir profundizando.
 
 ## Ruta De Aprendizaje
 
@@ -30,14 +30,14 @@ Por ahora el bloque principal del curso queda hasta `git revert`. Lo que sigue, 
 | 06 | Repositorio local y flujo de trabajo | [Abrir](#primer-repositorio-local) |
 | 07 | Estados, staging y commits | [Abrir](#estados-staging-y-commits) |
 | 08 | Deshacer cambios y `.gitignore` | [Deshacer](#deshacer-cambios-en-git) / [Gitignore](#gitignore-y-buenas-practicas) |
-| 09 | Historial, inspeccion y cierre de la clase | [Abrir](#historial-inspeccion-y-cierre-de-la-clase) |
+| 09 | Historial, inspeccion y deshacer con criterio | [Abrir](#historial-inspeccion-y-deshacer-con-criterio) |
 | 10 | Laboratorio y recursos | [Laboratorio](#laboratorio-primer-flujo-local-con-git) / [Recursos](#material-complementario) |
 
 > El indice esta ordenado como libro: primero la idea, luego la herramienta, despues el flujo de trabajo y finalmente los casos donde algo sale mal.
 
 > **Nuevo:** la teoria completa de ramas, merge, conflictos y limpieza ahora tiene su propio bloque en el indice: [Ramas En Git: Trabajo Paralelo, Merge Y Conflictos](#ramas-en-git-trabajo-paralelo-merge-y-conflictos).
 
-### Mapa Rapido De Lo Que Ya Cubrimos
+### Mapa Rapido De La Guia
 
 ```mermaid
 flowchart LR
@@ -1022,7 +1022,7 @@ En el flujo DevOps:
 - Docker empaqueta las aplicaciones.
 - Ansible automatiza configuraciones.
 
-Saber moverte en la terminal es fundamental para todos estos cursos.
+Saber moverte en la terminal es fundamental para trabajar con Git, servidores, contenedores y automatizacion.
 
 #### Git Dentro Del Flujo DevOps
 
@@ -1864,11 +1864,11 @@ Al finalizar, debes tener:
 
 ---
 
-## Historial, Inspeccion Y Cierre De La Clase
+## Historial, Inspeccion Y Deshacer Con Criterio
 
 En este punto ya no basta con saber guardar cambios. Tambien necesitamos leer el historial para entender que paso, comparar modificaciones antes de confirmar y corregir errores sin romper el trabajo de otras personas.
 
-Esta parte cierra el material actual del PPT fusionado.
+Esta parte cierra el recorrido principal de la guia: ya sabemos crear commits, movernos con ramas, fusionar trabajo y corregir errores comunes sin perder el control del historial.
 
 ### Leer El Historial Como Mapa
 
@@ -1930,7 +1930,7 @@ flowchart TD
     style I fill:#0969da,stroke:#0a3069,color:#ffffff
 ```
 
-Comandos que quedan dentro del material actual:
+Comandos principales de esta parte:
 
 ```bash
 git restore archivo.txt
@@ -1948,9 +1948,9 @@ La regla practica es simple:
 - Si el commit todavia es tuyo y no lo compartiste, puedes usar `amend` o `reset`.
 - Si el historial ya fue compartido, `revert` suele ser la opcion mas sana porque no borra historia.
 
-### Lo Que Dejamos Para La Sesion 4
+### Temas Para Ampliar Despues
 
-No vamos a meter todo en una sola clase porque ahi es donde Git empieza a sentirse pesado. La siguiente sesion se puede trabajar con mas aire:
+Git tiene mas herramientas, pero conviene verlas cuando la base anterior ya esta clara. Estos temas quedan como siguiente nivel de estudio:
 
 ```mermaid
 flowchart LR
@@ -1974,7 +1974,7 @@ flowchart LR
 
 | Recurso | Enlace |
 |---|---|
-| PPT fusionado actualizado | [Descargar](./material/programa-completo-git-y-github-9na-edicion.pdf) |
+| Guia visual completa | [Descargar](./material/programa-completo-git-y-github-9na-edicion.pdf) |
 | PDF base del material | [Descargar](./material/fundamentos-instalacion-trabajo-local.pdf) |
 | Ubuntu CLI Cheat Sheet | [Descargar](./recursos/ubuntu-cli-cheat-sheet.pdf) |
 | Practica interactiva de Linux | [KodeKloud Labs](https://kodekloud.com/studio/labs/linux/) |
