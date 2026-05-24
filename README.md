@@ -22,11 +22,7 @@ Aprende Git y GitHub desde fundamentos hasta flujos colaborativos reales, con ex
 | 09 | Historial, inspeccion y deshacer con criterio | [Abrir](./clases/09-historial-revert.md) |
 | 10 | Ramas en Git | [Abrir](./clases/10-ramas.md) |
 | 11 | Merge y conflictos | [Abrir](./clases/11-merge-conflictos.md) |
-| 12 | Repositorios remotos en GitHub | [Abrir](./clases/12-remotos-github.md) |
-| 13 | Pull Requests y colaboracion | [Abrir](./clases/13-pull-requests.md) |
-| 14 | Forks y flujo open source | [Abrir](./clases/14-forks-open-source.md) |
-| 15 | Flujo profesional con Git y GitHub | [Abrir](./clases/15-flujo-profesional.md) |
-| Bonus | Loki y la Linea Temporal Sagrada | [Abrir](./clases/16-bonus-loki.md) |
+| Bonus | Loki y la Linea Temporal Sagrada | [Abrir](./clases/12-bonus-loki.md) |
 
 > El indice esta ordenado como libro: primero la idea, luego la herramienta, despues el flujo de trabajo y finalmente los casos donde algo sale mal.
 
@@ -44,10 +40,6 @@ flowchart LR
     H --> I["Historial y revert"]
     I --> J["Ramas"]
     J --> K["Merge y conflictos"]
-    K --> L["Remotos"]
-    L --> M["Pull Requests"]
-    M --> N["Forks"]
-    N --> O["Flujo profesional"]
 
     style A fill:#1f6feb,stroke:#58a6ff,color:#fff
     style B fill:#238636,stroke:#3fb950,color:#fff
@@ -60,10 +52,6 @@ flowchart LR
     style I fill:#30363d,stroke:#8b949e,color:#fff
     style J fill:#1f6feb,stroke:#58a6ff,color:#fff
     style K fill:#8957e5,stroke:#bc8cff,color:#fff
-    style L fill:#30363d,stroke:#8b949e,color:#fff
-    style M fill:#238636,stroke:#3fb950,color:#fff
-    style N fill:#9e6a03,stroke:#d29922,color:#fff
-    style O fill:#da3633,stroke:#f85149,color:#fff
 ```
 
 ## Laboratorio
@@ -89,4 +77,4 @@ flowchart LR
 | Documentacion oficial de Git | [git-scm.com/doc](https://git-scm.com/doc) |
 | Pro Git (libro gratuito) | [git-scm.com/book](https://git-scm.com/book/en/v2) |
 
-El contenido principal cubre Git local, ramas, merge, conflictos, GitHub remoto, Pull Requests, forks y flujo de trabajo profesional. Los temas como `rebase`, `stash`, `cherry-pick`, `reflog`, tags y GitHub Actions quedan introducidos como ampliacion para quien quiera seguir profundizando.
+El contenido principal de esta guia llega hasta `git revert`. Los temas como `rebase`, `stash`, `cherry-pick`, `reflog` y hooks quedan propuestos como ampliacion para quien quiera seguir profundizando.

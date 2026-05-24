@@ -67,4 +67,4 @@ Asi que la proxima vez que trabajes en un proyecto de Git, recuerda que no solo 
 
 ---
 
-[&larr; Anterior: Flujo profesional](./15-flujo-profesional.md) | [Volver al indice](../README.md)
+[&larr; Anterior: Merge y conflictos](./11-merge-conflictos.md) | [Volver al indice](../README.md)
