@@ -85,7 +85,10 @@ git commit -m "Agrega README inicial"
 
 Un **commit** es una instantanea confirmada del estado del proyecto. Es un punto del historial al que puedes volver, comparar o usar como referencia.
 
+
 No es simplemente "guardar un archivo". Guardar ocurre en tu editor. El commit ocurre en Git y deja una marca dentro del historial del repositorio.
+
+![Flujo de staging, commit y grabado](../imagenes/image.png)
 
 Un commit registra:
 
@@ -203,3 +206,6 @@ Elimina archivos temporales del repositorio
 ---
 
 [&larr; Anterior: Primer repositorio local](./05-repositorio-local.md) | [Siguiente: Deshacer cambios &rarr;](./07-deshacer-cambios.md)
+
+
+[def]: image.png
