@@ -81,11 +81,69 @@ Los archivos en verde estan listos para el commit.
 git commit -m "Agrega README inicial"
 ```
 
-Un commit es una foto del proyecto en un momento dado.
+## Que Es Un Commit
 
-- Guarda el estado de todos los archivos preparados.
-- Incluye autor, fecha y mensaje.
-- Genera un identificador unico (hash SHA-1).
+Un **commit** es una version guardada del proyecto. No guarda solamente "un archivo", sino una fotografia del estado preparado en el staging area.
+
+Cuando haces commit, Git registra:
+
+- Los cambios preparados con `git add`.
+- El autor del cambio.
+- La fecha y hora.
+- Un mensaje que explica que paso.
+- Un identificador unico llamado hash.
+- Una referencia al commit anterior.
+
+Visualmente, puedes pensar en un commit asi:
+
+```mermaid
+flowchart TB
+    C["Commit\n9f3a21c"]
+    C --> A["Autor\nTu Nombre"]
+    C --> F["Fecha\n2026-05-23"]
+    C --> M["Mensaje\nAgrega README inicial"]
+    C --> P["Padre\ncommit anterior"]
+    C --> S["Snapshot\nestado del proyecto"]
+
+    style C fill:#1f6feb,stroke:#58a6ff,color:#fff
+    style A fill:#30363d,stroke:#8b949e,color:#fff
+    style F fill:#30363d,stroke:#8b949e,color:#fff
+    style M fill:#238636,stroke:#3fb950,color:#fff
+    style P fill:#8957e5,stroke:#bc8cff,color:#fff
+    style S fill:#9e6a03,stroke:#d29922,color:#fff
+```
+
+Un commit no es una carpeta duplicada. Git guarda objetos internos y referencias para reconstruir cada version cuando sea necesario.
+
+## Que Guarda Realmente Un Commit
+
+- **Snapshot**: el estado confirmado de los archivos preparados.
+- **Hash**: identificador unico del commit, por ejemplo `9f3a21c`.
+- **Autor**: quien hizo el cambio.
+- **Mensaje**: explicacion corta del cambio.
+- **Padre**: el commit anterior desde donde nace este cambio.
+
+Ejemplo de historial simple:
+
+```text
+9f3a21c Agrega README inicial
+7b812aa Configura gitignore
+2ac441e Corrige instrucciones de instalacion
+```
+
+Cada linea representa un punto al que puedes volver, comparar o usar como referencia.
+
+## Commit Vs Guardar Archivo
+
+Guardar un archivo y hacer commit no son lo mismo.
+
+| Accion | Que significa |
+|---|---|
+| Guardar archivo | El cambio queda en tu carpeta local |
+| `git add` | Preparas el cambio para el proximo commit |
+| `git commit` | Guardas una version oficial en el historial |
+
+Por eso puedes guardar muchas veces un archivo, pero hacer un solo commit cuando el cambio ya tiene sentido.
 
 ### Commits Y HEAD
 
@@ -134,7 +192,8 @@ Un commit atomico facilita:
 
 - Usa imperativo: `Agrega`, `Corrige`, `Elimina`.
 - Se conciso pero claro.
-- Explica el que y el por que si es necesario.
+- Explica el que y el por que si necesario.
+- Evita sonar demasiado perfecto si el repositorio es personal o de aprendizaje.
 
 Ejemplos:
 
@@ -143,6 +202,16 @@ Agrega pagina de login
 Corrige error de validacion en formulario
 Elimina archivos temporales del repositorio
 ```
+
+En un curso o repo personal tambien esta bien usar mensajes mas naturales:
+
+```text
+ordeno las clases
+arreglo el ejemplo del merge
+agrego notas de commits
+```
+
+Lo importante es que el mensaje ayude a entender el historial. No tiene que parecer escrito por documentacion corporativa.
 
 ---
 

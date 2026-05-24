@@ -314,4 +314,4 @@ git status
 
 ---
 
-[&larr; Anterior: Ramas](./10-ramas.md) | [Siguiente: Bonus - Loki y la Linea Temporal &rarr;](./12-bonus-loki.md)
+[&larr; Anterior: Ramas](./10-ramas.md) | [Siguiente: Remotos y GitHub &rarr;](./12-remotos-github.md)
