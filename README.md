@@ -67,7 +67,7 @@ flowchart LR
 
 | Material | Descripcion |
 |---|---|
-| [Guia visual completa](./material/programa-completo-git-y-github-9na-edicion.pdf) | Presentacion de apoyo con fundamentos, flujo local, ramas, merge, conflictos, historial, reset, `git revert` y `git rebase`. |
+| [Slides completos](./material/programa-completo-git-y-github-9na-edicion.pdf) | Slides Completo del curso |
 
 
 ## Recursos Complementarios
