@@ -123,4 +123,4 @@ Luego crea el archivo `~/.gitignore_global` con tus reglas comunes.
 
 ---
 
-[&larr; Anterior: Deshacer cambios](./07-deshacer-cambios.md) | [Siguiente: Historial y revert &rarr;](./09-historial-revert.md)
+[&larr; Anterior: Deshacer cambios](./07-deshacer-cambios.md) | [Siguiente: Ramas &rarr;](./10-ramas.md)

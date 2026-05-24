@@ -81,11 +81,67 @@ Los archivos en verde estan listos para el commit.
 git commit -m "Agrega README inicial"
 ```
 
-Un commit es una foto del proyecto en un momento dado.
+## Que Es Un Commit
+
+Un **commit** es una instantanea confirmada del estado del proyecto. Es un punto del historial al que puedes volver, comparar o usar como referencia.
+
+No es simplemente "guardar un archivo". Guardar ocurre en tu editor. El commit ocurre en Git y deja una marca dentro del historial del repositorio.
+
+Un commit registra:
+
+- El estado preparado de los archivos.
+- Un identificador unico llamado hash.
+- El autor.
+- La fecha.
+- Un mensaje.
+- El commit anterior, tambien llamado padre.
+
+```mermaid
+flowchart TB
+    C["Commit\n9f3a21c"]
+    C --> H["Hash\nidentificador unico"]
+    C --> A["Autor\nquien hizo el cambio"]
+    C --> M["Mensaje\nque cambio"]
+    C --> P["Padre\ncommit anterior"]
+    C --> S["Snapshot\nestado confirmado"]
+
+    style C fill:#1f6feb,stroke:#58a6ff,color:#fff
+    style H fill:#30363d,stroke:#8b949e,color:#fff
+    style A fill:#30363d,stroke:#8b949e,color:#fff
+    style M fill:#238636,stroke:#3fb950,color:#fff
+    style P fill:#8957e5,stroke:#bc8cff,color:#fff
+    style S fill:#9e6a03,stroke:#d29922,color:#fff
+```
+
+Regla practica del PPT: si no puedes resumir el cambio en una frase clara, probablemente el commit es demasiado grande.
+
+## Que Guarda Realmente Un Commit
+
+Un commit guarda una fotografia del proyecto en ese momento.
 
 - Guarda el estado de todos los archivos preparados.
 - Incluye autor, fecha y mensaje.
 - Genera un identificador unico (hash SHA-1).
+
+Ejemplo de historial:
+
+```text
+a1b2c3d Agrega README inicial
+b4c5d6e Agrega validacion de email
+c7d8e9f Corrige estilos del formulario
+```
+
+Cada linea representa una decision guardada en el tiempo.
+
+## Guardar Archivo Vs `git add` Vs `git commit`
+
+| Accion | Que significa |
+|---|---|
+| Guardar archivo | El cambio queda en tu carpeta local |
+| `git add` | Preparas el cambio para el proximo commit |
+| `git commit` | Guardas una version oficial en el historial |
+
+Puedes guardar muchas veces un archivo, pero hacer commit solo cuando el cambio ya tiene sentido.
 
 ### Commits Y HEAD
 

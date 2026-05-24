@@ -92,4 +92,4 @@ Git permite que cada persona tenga una copia completa del historial en su maquin
 
 ---
 
-[Siguiente: Terminal y Linux basico &rarr;](./02-terminal-linux.md)
+[Siguiente: Git y GitHub &rarr;](./04-git-y-github.md)

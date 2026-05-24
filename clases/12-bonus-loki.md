@@ -67,4 +67,4 @@ Asi que la proxima vez que trabajes en un proyecto de Git, recuerda que no solo 
 
 ---
 
-[&larr; Anterior: Merge y conflictos](./11-merge-conflictos.md) | [Volver al indice](../README.md)
+[&larr; Anterior: Historial y deshacer](./09-historial-revert.md) | [Volver al indice](../README.md)

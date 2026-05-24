@@ -87,4 +87,4 @@ Veras la carpeta `.git` en la lista.
 
 ---
 
-[&larr; Anterior: Git y GitHub](./04-git-y-github.md) | [Siguiente: Estados, staging y commits &rarr;](./06-estados-staging-commits.md)
+[&larr; Anterior: Instalacion y configuracion](./03-instalacion-configuracion.md) | [Siguiente: Estados, staging y commits &rarr;](./06-estados-staging-commits.md)

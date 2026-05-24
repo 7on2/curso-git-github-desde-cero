@@ -54,4 +54,4 @@ El flujo basico es:
 
 ---
 
-[&larr; Anterior: Instalacion](./03-instalacion-configuracion.md) | [Siguiente: Primer repositorio local &rarr;](./05-repositorio-local.md)
+[&larr; Anterior: Fundamentos](./01-fundamentos.md) | [Siguiente: Terminal y Linux basico &rarr;](./02-terminal-linux.md)

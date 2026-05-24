@@ -123,4 +123,4 @@ cat README.md
 
 ---
 
-[&larr; Anterior: Fundamentos](./01-fundamentos.md) | [Siguiente: Instalacion y configuracion &rarr;](./03-instalacion-configuracion.md)
+[&larr; Anterior: Git y GitHub](./04-git-y-github.md) | [Siguiente: Instalacion y configuracion &rarr;](./03-instalacion-configuracion.md)

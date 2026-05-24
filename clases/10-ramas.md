@@ -391,4 +391,4 @@ Historicamente, la rama principal se llamaba `master`. Desde 2020, la industria 
 
 ---
 
-[&larr; Anterior: Historial y revert](./09-historial-revert.md) | [Siguiente: Merge y conflictos &rarr;](./11-merge-conflictos.md)
+[&larr; Anterior: .gitignore](./08-gitignore.md) | [Siguiente: Merge y conflictos &rarr;](./11-merge-conflictos.md)

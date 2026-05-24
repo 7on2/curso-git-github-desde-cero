@@ -12,34 +12,34 @@ Aprende Git y GitHub desde fundamentos hasta flujos colaborativos reales, con ex
 | Bloque | Tema | Ir |
 |---|---|---|
 | 01 | Fundamentos de control de versiones | [Abrir](./clases/01-fundamentos.md) |
-| 02 | Terminal y Linux basico | [Abrir](./clases/02-terminal-linux.md) |
-| 03 | Instalacion y configuracion de Git | [Abrir](./clases/03-instalacion-configuracion.md) |
-| 04 | Git y GitHub | [Abrir](./clases/04-git-y-github.md) |
+| 02 | Git y GitHub | [Abrir](./clases/04-git-y-github.md) |
+| 03 | Terminal y Linux basico | [Abrir](./clases/02-terminal-linux.md) |
+| 04 | Instalacion y configuracion de Git | [Abrir](./clases/03-instalacion-configuracion.md) |
 | 05 | Primer repositorio local | [Abrir](./clases/05-repositorio-local.md) |
 | 06 | Estados, staging y commits | [Abrir](./clases/06-estados-staging-commits.md) |
 | 07 | Deshacer cambios en Git | [Abrir](./clases/07-deshacer-cambios.md) |
 | 08 | .gitignore y buenas practicas | [Abrir](./clases/08-gitignore.md) |
-| 09 | Historial, inspeccion y deshacer con criterio | [Abrir](./clases/09-historial-revert.md) |
-| 10 | Ramas en Git | [Abrir](./clases/10-ramas.md) |
-| 11 | Merge y conflictos | [Abrir](./clases/11-merge-conflictos.md) |
+| 09 | Ramas en Git | [Abrir](./clases/10-ramas.md) |
+| 10 | Merge y conflictos | [Abrir](./clases/11-merge-conflictos.md) |
+| 11 | Historial, inspeccion y deshacer con criterio | [Abrir](./clases/09-historial-revert.md) |
 | Bonus | Loki y la Linea Temporal Sagrada | [Abrir](./clases/12-bonus-loki.md) |
 
-> El indice esta ordenado como libro: primero la idea, luego la herramienta, despues el flujo de trabajo y finalmente los casos donde algo sale mal.
+> El indice sigue la linea del PPT: introduccion, entorno Git, flujo local, ramas/merge/conflictos e historial/deshacer.
 
 ### Mapa Rapido De La Guia
 
 ```mermaid
 flowchart LR
-    A["Fundamentos"] --> B["Terminal"]
+    A["Fundamentos"] --> D["Git y GitHub"]
+    D --> B["Terminal"]
     B --> C["Instalacion"]
-    C --> D["Git y GitHub"]
-    D --> E["Repositorio local"]
+    C --> E["Repositorio local"]
     E --> F["Staging y commits"]
     F --> G["Deshacer cambios"]
     G --> H["Gitignore"]
-    H --> I["Historial y revert"]
-    I --> J["Ramas"]
+    H --> J["Ramas"]
     J --> K["Merge y conflictos"]
+    K --> I["Historial y revert"]
 
     style A fill:#1f6feb,stroke:#58a6ff,color:#fff
     style B fill:#238636,stroke:#3fb950,color:#fff

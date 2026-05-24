@@ -86,4 +86,4 @@ Si todos los comandos responden correctamente, Git esta listo para usar.
 
 ---
 
-[&larr; Anterior: Terminal y Linux](./02-terminal-linux.md) | [Siguiente: Git y GitHub &rarr;](./04-git-y-github.md)
+[&larr; Anterior: Terminal y Linux](./02-terminal-linux.md) | [Siguiente: Primer repositorio local &rarr;](./05-repositorio-local.md)

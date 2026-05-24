@@ -103,4 +103,4 @@ flowchart LR
 
 ---
 
-[&larr; Anterior: .gitignore](./08-gitignore.md) | [Siguiente: Ramas &rarr;](./10-ramas.md)
+[&larr; Anterior: Merge y conflictos](./11-merge-conflictos.md) | [Siguiente: Bonus - Loki y la Linea Temporal &rarr;](./12-bonus-loki.md)
