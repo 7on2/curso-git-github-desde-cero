@@ -65,7 +65,6 @@ flowchart LR
 | Material | Descripcion |
 |---|---|
 | [Guia visual completa](./material/programa-completo-git-y-github-9na-edicion.pdf) | Presentacion de apoyo con fundamentos, flujo local, ramas, merge, conflictos, historial, reset y `git revert`. |
-| [Material base anterior](./material/fundamentos-instalacion-trabajo-local.pdf) | PDF inicial de fundamentos, instalacion y trabajo local. |
 
 ## Recursos Complementarios
 
