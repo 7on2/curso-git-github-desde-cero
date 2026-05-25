@@ -27,14 +27,16 @@ Aprende Git y GitHub desde fundamentos hasta trabajo local, ramas, conflictos, l
 
 > El indice sigue la linea del PPT: introduccion, entorno Git, flujo local, ramas/merge/conflictos, historial/deshacer y rebase/limpieza de historial.
 
-### Mapa Rapido De La Guia
+## Como Usar Esta Guia
 
-| Etapa | Objetivo | Temas principales |
-|---|---|---|
-| 1. Base para empezar | Entender que problema resuelve Git y preparar el entorno | [Fundamentos](./clases/01-fundamentos.md), [Git y GitHub](./clases/04-git-y-github.md), [Terminal](./clases/02-terminal-linux.md), [Instalacion](./clases/03-instalacion-configuracion.md) |
-| 2. Flujo local | Crear historial confiable en la maquina local | [Repositorio local](./clases/05-repositorio-local.md), [Staging y commits](./clases/06-estados-staging-commits.md), [Deshacer cambios](./clases/07-deshacer-cambios.md), [.gitignore](./clases/08-gitignore.md) |
-| 3. Trabajo con ramas | Separar trabajo, integrar cambios y resolver conflictos | [Ramas](./clases/10-ramas.md), [Merge y conflictos](./clases/11-merge-conflictos.md) |
-| 4. Historial y cierre de Git | Leer, corregir y ordenar historial antes de pasar a GitHub | [Historial y revert](./clases/09-historial-revert.md), [Rebase y limpieza](./clases/12-rebase-limpieza-historial.md) |
+Esta guia esta pensada para avanzar con practica desde el primer bloque. No se trata de memorizar comandos aislados, sino de entender que problema resuelve cada herramienta de Git.
+
+1. **Primero entiende el flujo mental:** archivo modificado, cambio preparado y commit confirmado.
+2. **Luego practica con laboratorios pequenos:** cada tema tiene comandos concretos y una verificacion final.
+3. **Despues trabaja con ramas:** separa cambios, integra con `merge` y aprende a resolver conflictos.
+4. **Finalmente lee y ordena historial:** usa `log`, `diff`, `revert` y `rebase` con criterio antes de pasar a GitHub.
+
+Al terminar la parte de Git local deberias poder crear un repositorio, escribir commits claros, trabajar con ramas, resolver conflictos y explicar cuando usar `merge`, `revert` o `rebase`.
 
 ## Laboratorio
 
