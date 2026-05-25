@@ -91,6 +91,10 @@ Esto crea un nuevo commit que deshace los cambios del commit especificado, sin b
 | Revertir un commit | `git revert <hash>` |
 | Ver estado | `git status` |
 
+## Laboratorio Relacionado
+
+- [Deshacer cambios con criterio](../laboratorios/deshacer-cambios-con-criterio.md): practica como corregir cambios no confirmados, cambios en staging y commits ya creados.
+
 ---
 
 [&larr; Anterior: Estados, staging y commits](./06-estados-staging-commits.md) | [Siguiente: .gitignore y buenas practicas &rarr;](./08-gitignore.md)

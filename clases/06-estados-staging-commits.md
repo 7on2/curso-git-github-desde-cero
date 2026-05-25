@@ -203,6 +203,10 @@ Corrige error de validacion en formulario
 Elimina archivos temporales del repositorio
 ```
 
+## Laboratorio Relacionado
+
+- [Staging y commits atomicos](../laboratorios/staging-y-commits-atomicos.md): practica el paso de working directory a staging y la creacion de commits pequenos.
+
 ---
 
 [&larr; Anterior: Primer repositorio local](./05-repositorio-local.md) | [Siguiente: Deshacer cambios &rarr;](./07-deshacer-cambios.md)

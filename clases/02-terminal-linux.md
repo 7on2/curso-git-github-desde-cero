@@ -121,6 +121,10 @@ cat README.md
 | Ubuntu CLI Cheat Sheet | [Ver PDF](../recursos/ubuntu-cli-cheat-sheet.pdf) |
 | Guia de comandos Linux | [Linux Journey](https://linuxjourney.com/) |
 
+## Laboratorio Relacionado
+
+- [Terminal y archivos para Git](../laboratorios/terminal-y-archivos-para-git.md): practica rutas, creacion de archivos, lectura de contenido y organizacion de un proyecto base.
+
 ---
 
 [&larr; Anterior: Git y GitHub](./04-git-y-github.md) | [Siguiente: Instalacion y configuracion &rarr;](./03-instalacion-configuracion.md)

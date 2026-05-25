@@ -61,7 +61,12 @@ flowchart LR
 
 | Laboratorio | Descripcion | Ir |
 |---|---|---|
+| Terminal y archivos para Git | Practica rutas, carpetas, archivos y preparacion de un proyecto | [Abrir](./laboratorios/terminal-y-archivos-para-git.md) |
 | Primer flujo local con Git | Practica el ciclo basico: modificar, preparar, confirmar y revisar historial | [Abrir](./laboratorios/primer-flujo-local-con-git.md) |
+| Staging y commits atomicos | Separa cambios por intencion usando `status`, `diff`, `add` y `commit` | [Abrir](./laboratorios/staging-y-commits-atomicos.md) |
+| .gitignore, secretos y limpieza | Evita versionar archivos sensibles, logs y temporales | [Abrir](./laboratorios/gitignore-secretos-y-limpieza.md) |
+| Deshacer cambios con criterio | Practica `restore`, `restore --staged`, `amend` y `revert` | [Abrir](./laboratorios/deshacer-cambios-con-criterio.md) |
+| Ramas y flujo feature | Trabaja una mejora aislada, integrala y elimina la rama temporal | [Abrir](./laboratorios/ramas-flujo-feature.md) |
 | Merge con conflicto corto | Practica una fusion con conflicto sobre una misma linea | [Abrir](./laboratorios/merge-con-conflicto-corto.md) |
 | Merge vs Rebase corto | Compara historial con merge e historial lineal con rebase | [Abrir](./laboratorios/merge-vs-rebase-corto.md) |
 | Ejercicio integrador de Git | Repaso general: commits, ramas, conflictos, restore, amend y rebase | [Abrir](./laboratorios/ejercicio-integrador-git.md) |

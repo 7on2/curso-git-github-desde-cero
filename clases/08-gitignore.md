@@ -121,6 +121,10 @@ Luego crea el archivo `~/.gitignore_global` con tus reglas comunes.
 - Mantener el repositorio limpio facilita la colaboracion.
 - Nunca subas informacion sensible.
 
+## Laboratorio Relacionado
+
+- [.gitignore, secretos y limpieza](../laboratorios/gitignore-secretos-y-limpieza.md): practica reglas de ignorado para archivos locales, logs, temporales y secretos.
+
 ---
 
 [&larr; Anterior: Deshacer cambios](./07-deshacer-cambios.md) | [Siguiente: Ramas &rarr;](./10-ramas.md)

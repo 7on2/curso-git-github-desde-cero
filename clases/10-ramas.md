@@ -389,6 +389,10 @@ Historicamente, la rama principal se llamaba `master`. Desde 2020, la industria 
 - `main` es el estandar actual.
 - Git permite renombrar ramas facilmente.
 
+## Laboratorio Relacionado
+
+- [Ramas y flujo feature](../laboratorios/ramas-flujo-feature.md): practica una rama temporal, su integracion con `merge` y su eliminacion segura.
+
 ---
 
 [&larr; Anterior: .gitignore](./08-gitignore.md) | [Siguiente: Merge y conflictos &rarr;](./11-merge-conflictos.md)
