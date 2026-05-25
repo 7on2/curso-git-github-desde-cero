@@ -29,46 +29,12 @@ Aprende Git y GitHub desde fundamentos hasta trabajo local, ramas, conflictos, l
 
 ### Mapa Rapido De La Guia
 
-```mermaid
-flowchart TB
-    subgraph S1["1. Base Para Empezar"]
-      A["Fundamentos"]
-      B["Git y GitHub"]
-      C["Terminal"]
-      D["Instalacion"]
-    end
-
-    subgraph S2["2. Flujo Local"]
-      E["Repositorio local"]
-      F["Staging y commits"]
-      G["Deshacer cambios"]
-      H[".gitignore"]
-    end
-
-    subgraph S3["3. Trabajo Con Ramas"]
-      I["Ramas"]
-      J["Merge y conflictos"]
-    end
-
-    subgraph S4["4. Historial Y Cierre De Git"]
-      K["Historial y revert"]
-      L["Rebase y limpieza"]
-    end
-
-    A --> B --> C --> D
-    D --> E --> F --> G --> H
-    H --> I --> J
-    J --> K --> L
-
-    classDef base fill:#1f6feb,stroke:#58a6ff,color:#fff
-    classDef local fill:#238636,stroke:#3fb950,color:#fff
-    classDef ramas fill:#8957e5,stroke:#bc8cff,color:#fff
-    classDef cierre fill:#9e6a03,stroke:#d29922,color:#fff
-    class A,B,C,D base
-    class E,F,G,H local
-    class I,J ramas
-    class K,L cierre
-```
+| Etapa | Objetivo | Temas principales |
+|---|---|---|
+| 1. Base para empezar | Entender que problema resuelve Git y preparar el entorno | [Fundamentos](./clases/01-fundamentos.md), [Git y GitHub](./clases/04-git-y-github.md), [Terminal](./clases/02-terminal-linux.md), [Instalacion](./clases/03-instalacion-configuracion.md) |
+| 2. Flujo local | Crear historial confiable en la maquina local | [Repositorio local](./clases/05-repositorio-local.md), [Staging y commits](./clases/06-estados-staging-commits.md), [Deshacer cambios](./clases/07-deshacer-cambios.md), [.gitignore](./clases/08-gitignore.md) |
+| 3. Trabajo con ramas | Separar trabajo, integrar cambios y resolver conflictos | [Ramas](./clases/10-ramas.md), [Merge y conflictos](./clases/11-merge-conflictos.md) |
+| 4. Historial y cierre de Git | Leer, corregir y ordenar historial antes de pasar a GitHub | [Historial y revert](./clases/09-historial-revert.md), [Rebase y limpieza](./clases/12-rebase-limpieza-historial.md) |
 
 ## Laboratorio
 
